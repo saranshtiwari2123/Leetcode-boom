@@ -13,8 +13,8 @@ public:
             pq.push({ele.second,ele.first});
         }
         for(int i=0;i<k;i++){
-            pair<int,int> t = pq.top();
-            ans.push_back(t.second);
+            int t = pq.top().second;
+            ans.push_back(t);
             pq.pop();
         }
         return ans;
