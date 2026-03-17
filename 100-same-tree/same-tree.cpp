@@ -6,7 +6,9 @@ public:
         if(!p && !q) return true;
         if(p->val!=q->val) return false;
         bool lans = isSameTree(p->left,q->left);
+        if(lans==false) return false;
         bool rans = isSameTree(p->right, q->right);
-        return lans && rans;
+        if(rans==false) return false;
+        return true;
     }
 };
