@@ -10,7 +10,7 @@ public:
         vector<int> v;
         while(!q.empty()){
             int size = q.size();
-            v.clear();
+            vector<int>().swap(v);
             for(int i=0;i<size;i++){
                 TreeNode* a = q.front();
                 if(a->left) q.push(a->left);
