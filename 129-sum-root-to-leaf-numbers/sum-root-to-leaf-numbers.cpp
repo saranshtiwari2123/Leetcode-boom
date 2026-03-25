@@ -1,20 +1,17 @@
 class Solution {
 public:
-    int solve(TreeNode* root, int current) {
-        if (!root) return 0;
-
-        current = current * 10 + root->val;
-
-        // If leaf node
-        if (!root->left && !root->right) {
-            return current;
+    int sumT(TreeNode* root,int num){
+        if(root->left==NULL && root->right==NULL){
+            num = (num*10)+root->val;
+            return num;
         }
-
-        // Recur for left and right
-        return solve(root->left, current) + solve(root->right, current);
+        num = (num*10)+root->val;
+        int left = 0, right = 0;
+        if(root->left) left = sumT(root->left, num);
+        if(root->right) right = sumT(root->right, num);
+        return left+right;
     }
-
     int sumNumbers(TreeNode* root) {
-        return solve(root, 0);
+        return sumT(root, 0);
     }
 };
