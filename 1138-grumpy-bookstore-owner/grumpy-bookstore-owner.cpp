@@ -12,20 +12,8 @@ public:
         int j = minutes;
         int maxSum = sum;
         while(j<n){
-            if(grumpy[i-1]==0 && grumpy[j]==0){
-                i++;
-                j++;
-                continue;
-            }
-            else if(grumpy[i-1]==1 && grumpy[j]==0){
-                sum -= customer[i-1];
-            }
-            else if(grumpy[i-1]==0 && grumpy[j]==1){
-                sum += customer[j];
-            }
-            else{
-                sum += customer[j]-customer[i-1];
-            }
+            if(grumpy[i-1]==1) sum -= customer[i-1];
+            if(grumpy[j]==1) sum += customer[j];
             maxSum = max(maxSum, sum);
             i++;
             j++;
