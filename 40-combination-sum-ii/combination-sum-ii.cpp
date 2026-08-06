@@ -8,8 +8,8 @@ public:
             return;
         }
         for(int i=idx;i<candidates.size();i++){
-            if(i>idx && candidates[i]==candidates[i-1]) continue;
-            if(target>0 && !flag[i]){
+            if(i>idx && candidates[i]==candidates[i-1] && !flag[i-1]) continue;
+            if(target>0){
                 v.push_back(candidates[i]);
                 flag[i] = true;
                 combination(candidates, target-candidates[i], v, i+1, flag);
