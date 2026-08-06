@@ -7,7 +7,7 @@ public:
             return;
         }
         for(int i=0;i<nums.size();i++){
-            if(i>0 && nums[i]==nums[i-1] && flag[i-1]) continue;
+            if(i>0 && nums[i]==nums[i-1] && !flag[i-1]) continue;
             if(!flag[i]){
                 v.push_back(nums[i]);
                 flag[i] = true;
