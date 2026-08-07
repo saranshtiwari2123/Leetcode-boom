@@ -5,10 +5,10 @@ public:
         if(grid[i][j]==0) return 0;
         grid[i][j] = 0;
         count++;
-        int l = countArea(grid, i+1, j, count);
-        int r = countArea(grid, i, j+1, count);
-        int up = countArea(grid, i-1, j, count);
-        int down = countArea(grid, i, j-1, count);
+        countArea(grid, i+1, j, count);
+        countArea(grid, i, j+1, count);
+        countArea(grid, i-1, j, count);
+        countArea(grid, i, j-1, count);
         return count;
     }
     int maxAreaOfIsland(vector<vector<int>>& grid) {
