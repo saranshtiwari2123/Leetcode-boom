@@ -10,13 +10,13 @@ public:
         if(i==word.size()-1) return true;
 
         flag[sr][sc] = true;
-        bool left = search(board, flag, word, i+1, sr, sc-1, er, ec);
-        bool right = search(board, flag, word, i+1, sr, sc+1, er, ec);
-        bool up = search(board, flag, word, i+1, sr-1, sc, er, ec);
-        bool down = search(board, flag, word, i+1, sr+1, sc, er, ec);            
+        if(search(board, flag, word, i+1, sr, sc-1, er, ec)) return true;
+        if(search(board, flag, word, i+1, sr, sc+1, er, ec)) return true;
+        if(search(board, flag, word, i+1, sr-1, sc, er, ec)) return true;
+        if(search(board, flag, word, i+1, sr+1, sc, er, ec)) return true;            
         flag[sr][sc] = false;
         
-        return left||right||down||up;;
+        return false;
     }
     bool exist(vector<vector<char>>& board, string word) {
         int er = board.size();
